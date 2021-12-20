@@ -1,11 +1,17 @@
 <template>
-  <div class="header-container d-flex align-items-center">
+  <div class="header-container d-flex justify-content-around">
     <b-row align-v="center">
-      <b-col class="logo">Ball<span class="font-pink">News</span></b-col>
-      <b-col class="header-item">Area</b-col>
-      <b-col class="header-item">Club</b-col>
-      <b-col class="header-item">Match</b-col>
-      <b-col class="header-item">History</b-col>
+      <b-col class="header-item"
+        ><router-link to="/area">Area</router-link></b-col
+      >
+      <b-col class="header-item"><router-link to="">Club</router-link></b-col>
+      <b-col class="logo"
+        ><router-link to="/"
+          >Ball<span class="font-pink">News</span></router-link
+        ></b-col
+      >
+      <b-col class="header-item"><router-link to="">Match</router-link></b-col>
+      <b-col class="header-item"><router-link to="">Player</router-link></b-col>
     </b-row>
   </div>
 </template>
@@ -27,15 +33,24 @@ export default {
   .logo {
     font-size: 24px;
     font-weight: 600;
+
+    a {
+      color: white;
+      text-decoration: none;
+    }
   }
 
   .header-item {
-    margin-left: 30px;
+    margin: 0 15px;
     padding: 0;
+    a {
+      color: white;
+      text-decoration: none;
 
-    &:hover {
-      color: #ff2c9e;
-      cursor: pointer;
+      &:hover {
+        color: #ff2c9e;
+        cursor: pointer;
+      }
     }
   }
 }
