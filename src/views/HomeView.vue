@@ -1,15 +1,5 @@
 <template>
-  <b-container fluid class="p-0">
-    <b-row>
-      <b-col class="first-content"
-        ><h1>
-          Made for <span class="font-blue">Football </span>
-          <span class="font-pink">Lovers</span>
-        </h1></b-col
-      >
-      <b-col>2</b-col>
-    </b-row>
-  </b-container>
+  <div><h1>HOME</h1></div>
 </template>
 
 <script>
