@@ -1,57 +1,39 @@
 <template>
-  <b-container fluid class="bg-container">
-    <b-row class="bg-filter">
-      <Header />
-      <b-col>1 Of 2</b-col>
-      <b-col>2 of 3</b-col>
+  <b-container fluid class="p-0">
+    <b-row>
+      <b-col class="first-content"
+        ><h1>
+          Made for <span class="font-blue">Football </span>
+          <span class="font-pink">Lovers</span>
+        </h1></b-col
+      >
+      <b-col>2</b-col>
     </b-row>
   </b-container>
 </template>
 
 <script>
-import Header from "@/components/Header.vue";
-
 export default {
   name: "HomeView",
-  components: {
-    Header,
-  },
 };
 </script>
 
 <style scoped lang="scss">
-.bg-container {
-  height: 100vh;
-  width: 100vw;
-  background-image: url("../assets/bg.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-
-  .bg-filter {
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.55);
-  }
-}
-
 .first-content {
-  width: 30vw;
-  height: 100vh;
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 30px;
-
-  h2 {
-    font-size: 48px;
-    font-weight: 900;
+  h1 {
+    color: #121212;
+    font-size: 144px;
+    font-weight: 300;
     text-align: left;
-    letter-spacing: -2px;
-    width: 219px;
+    padding: 0 40px;
   }
 }
 
-.font-blue {
-  color: #160045;
+.bg-red {
+  background-color: red;
+}
+.bg-blue {
+  background-color: blue;
 }
 
 .font-red {
