@@ -1,51 +1,55 @@
 <template>
-  <b-container fluid id="app" class="p-0">
-    <Header />
-    <!-- <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav> -->
-    <router-view />
-  </b-container>
+  <v-app id="inspire">
+    <v-navigation-drawer v-model="drawer" app>
+      <v-app-bar dark prominent>
+        <v-list-item>
+          <v-list-item-content>
+            <v-list-item-title class="text-h6"
+              >Football Club Profile
+            </v-list-item-title>
+            <v-list-item-subtitle
+              >The best app ever made!
+            </v-list-item-subtitle>
+          </v-list-item-content>
+        </v-list-item>
+        <v-divider></v-divider>
+      </v-app-bar>
+      <v-list dense rounded>
+        <v-list-item v-for="item in items" :key="item.title" :to="item.to" link>
+          <v-list-item-icon>
+            <v-icon>{{ item.icon }}</v-icon>
+          </v-list-item-icon>
+          <v-list-item-content>
+            <v-list-item-title>{{ item.title }}</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+    </v-navigation-drawer>
+    <v-app-bar app dark>
+      <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+
+      <v-toolbar-title>Application</v-toolbar-title>
+    </v-app-bar>
+
+    <v-main>
+      <router-view />
+    </v-main>
+  </v-app>
 </template>
 
 <script>
-import Header from "@/components/Header.vue";
-
 export default {
-  components: {
-    Header,
-  },
+  name: "App",
+  components: {},
+  data: () => ({
+    drawer: null,
+    items: [
+      { title: "Home", icon: "mdi-home", to: "/" },
+      { title: "Country List", icon: "mdi-view-dashboard", to: "/area" },
+    ],
+    right: null,
+  }),
 };
 </script>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
-
-.font-pink {
-  color: #ff2c9e;
-}
-
-.font-blue {
-  color: #632cff;
-}
-</style>
+<style lang="scss"></style>
