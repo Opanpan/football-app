@@ -1,7 +1,8 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import HomeView from "../views/HomeView.vue";
-import AreView from "@/views/AreaView.vue";
+import AreaView from "@/views/AreaView.vue";
+import ClubArea from "@/views/ClubArea.vue";
 
 Vue.use(VueRouter);
 
@@ -23,7 +24,12 @@ const routes = [
   {
     path: "/area",
     name: "area",
-    component: AreView,
+    component: AreaView,
+  },
+  {
+    path: "/areas/:id",
+    name: "club-area",
+    component: ClubArea,
   },
 ];
 
