@@ -1,14 +1,17 @@
 <template>
   <v-container fluid>
-    <v-row v-if="teams.length < 0">
+    <v-row v-if="teams.length === 0">
       <v-col>
         <v-row>
-          <v-col class="col-auto"
-            ><h1>Sorry we don't have the Data :(</h1></v-col
+          <v-col
+            ><h1>Please Wait.......</h1>
+            <h3>
+              If loading too long maybe there is no data, i am sorry :(
+            </h3></v-col
           >
         </v-row>
         <v-row>
-          <v-col class="col-auto">
+          <v-col>
             <router-link to="/area"
               ><v-btn color="error">Go back</v-btn></router-link
             ></v-col
@@ -133,7 +136,13 @@ h1 {
   }
 }
 
+h3 {
+  font-weight: 300;
+  text-align: center;
+}
+
 a {
   text-decoration: none;
+  text-align: center;
 }
 </style>
