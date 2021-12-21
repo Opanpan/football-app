@@ -36,7 +36,7 @@
             position="center"
             height="350"
             width="350"
-            :src="team.crestUrl"
+            :src="team.crestUrl ? team.crestUrl : image"
           ></v-img>
 
           <v-card-title class="my-0 p-0">{{ team.name }}</v-card-title>
@@ -53,24 +53,10 @@
             </div>
 
             <v-divider class="mx-4 my-3"></v-divider>
-
-            <div class="black--text mt-3">Address</div>
-            <div class="grey--text">
-              {{ team.address }}
-            </div>
-            <div>
-              <div class="black--text mt-3">Contact</div>
-              <div class="grey--text">
-                {{ team.phone ? team.phone : "N/A" }}
-              </div>
-              <div class="grey--text">
-                {{ team.email ? team.email : "N/A" }}
-              </div>
-            </div>
           </v-card-text>
 
           <v-card-actions>
-            <v-btn color="deep-purple lighten-2" text @click="reserve">
+            <v-btn color="deep-purple lighten-2" text @click="click(team)">
               Detail
             </v-btn>
           </v-card-actions>
@@ -82,6 +68,7 @@
 
 <script>
 import axios from "axios";
+import image from "@/assets/na.png";
 export default {
   name: "club-area",
   data() {
@@ -90,6 +77,7 @@ export default {
       selection: 1,
       place: String,
       teams: [],
+      image: image,
     };
   },
   methods: {
@@ -97,6 +85,13 @@ export default {
       this.loading = true;
 
       setTimeout(() => (this.loading = false), 2000);
+    },
+    click: function (team) {
+      console.log(team);
+      this.$router.push({
+        name: "club-detail",
+        params: { id: team.id },
+      });
     },
   },
   mounted() {
