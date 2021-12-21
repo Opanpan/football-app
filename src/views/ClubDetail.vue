@@ -9,7 +9,7 @@
           :src="items.crestUrl ? items.crestUrl : image"
         ></v-img
       ></v-col>
-      <v-col>
+      <v-col class="col-auto">
         <h2 class="mt-5">Team Name</h2>
         <h3>{{ items.name }}</h3>
         <h2 class="mt-5">Founded</h2>
@@ -70,7 +70,7 @@
             </h4>
           </v-card-text>
           <v-card-actions>
-            <v-btn color="deep-purple lighten-2" text @click="click(team)">
+            <v-btn color="deep-purple lighten-2" text @click="click(squad.id)">
               Detail
             </v-btn>
           </v-card-actions>
@@ -108,6 +108,13 @@ export default {
   methods: {
     handleUrl: function (url) {
       window.open(url, "_blank");
+    },
+    click: function (team) {
+      console.log(team);
+      this.$router.push({
+        name: "player-detail",
+        params: { id: team },
+      });
     },
   },
 };
