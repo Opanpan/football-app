@@ -51,11 +51,14 @@ export default {
   },
   mounted() {
     axios
-      .get(`http://api.football-data.org/v2/players/${this.$route.params.id}`, {
-        headers: {
-          "X-Auth-Token": "0a13a83a660747d2b17ad23da2a74309",
-        },
-      })
+      .get(
+        `https://api.football-data.org/v2/players/${this.$route.params.id}`,
+        {
+          headers: {
+            "X-Auth-Token": "0a13a83a660747d2b17ad23da2a74309",
+          },
+        }
+      )
       .then((res) => {
         console.log(res.data);
         this.items = res.data;
