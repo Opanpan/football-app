@@ -1,5 +1,5 @@
 <template>
-  <v-container
+  <v-container fluid
     ><v-card class="mx-auto my-12" min-width="300" outlined>
       <v-card-title class="my-0 p-0 font-weight-bold">{{
         items.name
@@ -35,6 +35,11 @@
           {{ items.shirtNumber ? items.shirtNumber : "N/A" }}
         </h4>
       </v-card-text>
+      <v-card-actions>
+        <v-btn color="black" class="white--text" @click="$router.go(-1)">
+          Back
+        </v-btn>
+      </v-card-actions>
     </v-card></v-container
   >
 </template>

@@ -23,7 +23,7 @@
       </template>
       <!-- eslint-disable-next-line -->
       <template v-slot:item.action="{ item }">
-        <v-btn v-on:click="click(item)">OPEN</v-btn>
+        <v-btn dark v-on:click="click(item)">OPEN</v-btn>
       </template>
     </v-data-table>
   </div>

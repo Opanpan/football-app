@@ -1,5 +1,8 @@
 <template>
   <v-container fluid>
+    <v-btn color="black" class="white--text" @click="$router.go(-1)">
+      Back
+    </v-btn>
     <v-row v-if="teams.length === 0">
       <v-col>
         <v-row>
@@ -8,13 +11,6 @@
             <h3>
               If loading too long maybe there is no data, i am sorry :(
             </h3></v-col
-          >
-        </v-row>
-        <v-row>
-          <v-col>
-            <router-link to="/area"
-              ><v-btn color="error">Go back</v-btn></router-link
-            ></v-col
           >
         </v-row>
       </v-col>
@@ -59,12 +55,10 @@
           </v-card-text>
 
           <v-card-actions>
-            <v-btn color="deep-purple lighten-2" text @click="click(team)">
-              Detail
-            </v-btn>
+            <v-btn color="black" text @click="click(team)"> Detail </v-btn>
           </v-card-actions>
-        </v-card></v-col
-      >
+        </v-card>
+      </v-col>
     </v-row>
   </v-container>
 </template>

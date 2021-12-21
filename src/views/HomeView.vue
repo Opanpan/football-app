@@ -1,5 +1,12 @@
 <template>
-  <div class="first-content"><h1>MADE FOR FOOTBALL LOVERS</h1></div>
+  <v-container>
+    <v-row
+      ><v-col class="col-auto first-content"
+        ><h1>MADE FOR FOOTBALL LOVERS</h1>
+        <h2>Information that you may never know about the world of football</h2>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
@@ -12,22 +19,19 @@ export default {
 .first-content {
   h1 {
     color: #121212;
-    font-size: 144px;
     font-weight: 300;
-    width: 557px;
+    font-size: 100px;
+    width: 100vw;
     text-align: left;
-    padding: 0 40px;
+
+    @media screen and (min-width: 425px) {
+      font-size: 144px;
+      width: 50vw;
+    }
   }
-}
 
-.bg-red {
-  background-color: red;
-}
-.bg-blue {
-  background-color: blue;
-}
-
-.font-red {
-  color: #cd0404;
+  h2 {
+    font-weight: 300;
+  }
 }
 </style>

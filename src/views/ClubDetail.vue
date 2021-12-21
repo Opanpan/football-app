@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container fluid>
     <v-row
       ><v-col class="col-auto">
         <v-img
@@ -36,6 +36,9 @@
         <h3 v-on:click="handleUrl(items.website)" class="blue--text a-custom">
           {{ items.website }}
         </h3>
+        <v-btn color="black" class="white--text mt-5" @click="$router.go(-1)">
+          Back
+        </v-btn>
       </v-col></v-row
     >
     <v-row dense>
@@ -65,14 +68,12 @@
             <h3 class="black--text font-weight-medium mt-3 text-right">
               {{ squad.role }}
             </h3>
-            <h4 class="black--text font-weight-medium text-right">
+            <h4 class="black--text font-weight-light text-right">
               {{ squad.position }}
             </h4>
           </v-card-text>
           <v-card-actions>
-            <v-btn color="deep-purple lighten-2" text @click="click(squad.id)">
-              Detail
-            </v-btn>
+            <v-btn color="black" text @click="click(squad.id)"> Detail </v-btn>
           </v-card-actions>
         </v-card></v-col
       >
