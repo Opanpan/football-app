@@ -1,5 +1,5 @@
 <template>
-  <div><h1>HOME</h1></div>
+  <div class="first-content"><h1>MADE FOR FOOTBALL LOVERS</h1></div>
 </template>
 
 <script>
@@ -14,6 +14,7 @@ export default {
     color: #121212;
     font-size: 144px;
     font-weight: 300;
+    width: 557px;
     text-align: left;
     padding: 0 40px;
   }

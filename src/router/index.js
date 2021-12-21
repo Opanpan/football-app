@@ -4,6 +4,7 @@ import HomeView from "../views/HomeView.vue";
 import AreaView from "@/views/AreaView.vue";
 import ClubArea from "@/views/ClubArea.vue";
 import ClubDetail from "@/views/ClubDetail.vue";
+import PlayerDetail from "@/views/PlayerDetail.vue";
 
 Vue.use(VueRouter);
 
@@ -27,6 +28,11 @@ const routes = [
     path: "/club/:id",
     name: "club-detail",
     component: ClubDetail,
+  },
+  {
+    path: "/player/:id",
+    name: "player-detail",
+    component: PlayerDetail,
   },
 ];
 
